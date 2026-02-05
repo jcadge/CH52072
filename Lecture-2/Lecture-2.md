@@ -4,11 +4,11 @@ This is how the Jupyter notebook files are incorporated into this Lecture:
 
 - Introduction to molecular representation
 - Molecules as graphs
-    - MolecularGraphs.ipynb
+    - [MolecularGraphs.ipynb](MolecularGraphs.ipynb)
 - Molecular fingerprints
-    - MolecularFingerprints.ipynb
+    -[MolecularFingerprints.ipynb](MolecularFingerprints.ipynb)
 - SMILES strings
-    - Excerise1.ipynb
+    - [Excerise1.ipynb](Exercise1.ipynb)
 - Beyond 2D representations
 - Steric features
 - Electronic features
