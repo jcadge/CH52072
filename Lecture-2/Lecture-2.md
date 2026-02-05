@@ -6,7 +6,7 @@ This is how the Jupyter notebook files are incorporated into this Lecture:
 - Molecules as graphs
     - [MolecularGraphs.ipynb](MolecularGraphs.ipynb)
 - Molecular fingerprints
-    -[MolecularFingerprints.ipynb](MolecularFingerprints.ipynb)
+    - [MolecularFingerprints.ipynb](MolecularFingerprints.ipynb)
 - SMILES strings
     - [Excerise1.ipynb](Exercise1.ipynb)
 - Beyond 2D representations
