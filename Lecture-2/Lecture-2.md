@@ -12,3 +12,4 @@ This is how the Jupyter notebook files are incorporated into this Lecture:
 - Beyond 2D representations
 - Steric features
 - Electronic features
+    - [Exercise2.ipynb](Excercise2.ipynb)
