@@ -1,0 +1,64 @@
+ROBERT v 2.1.0 2026/02/11 21:55:27 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, 14, e1733.
+
+Command line used in ROBERT: python -m robert --csv_name "Amide_Coupling_Modeling_Spreadsheet.csv" --y "ln rate" --names "Coupling" --ignore "['Coupling', 'Acid', 'Amine', 'rate']" --model "['MVL']"
+
+
+o  Starting tests to verify the prediction ability of the ML models with the VERIFY module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  Database MVL_db.csv loaded successfully, including:
+   - 51 datapoints
+   - 2 accepted descriptors
+   - 5 ignored descriptors
+   - 0 discarded descriptors
+
+o  ML model No_PFI (with no PFI filter) and Xy database were loaded, including:
+   - Target value: ln rate
+   - Names: Coupling
+   - Model: MVL
+   - k-fold CV: 5
+   - Repetitions CV: 10
+   - Descriptors: ['E (HOMO)_anion_boltz', 'eta_anion_boltz']
+   - Training points: 41
+   - Test points: 10
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_MVL_No_PFI.png
+      Results of flawed models and sorted cross-validation:
+      Original RMSE (10x 5-fold CV) 1.7 + 15% & 30% threshold = 1.9 & 2.2
+         - y_mean: UNCLEAR, RMSE = 2.1, higher than original, but close to fail
+         o y_shuffle: PASSED, RMSE = 2.2, higher than thresholds
+         o onehot: PASSED, RMSE = 2.2, higher than thresholds
+         - Sorted 5-fold CV : R2 = [0.64, 0.3, 0.05, 0.08, 0.69], MAE = [2.94, 0.74, 1.22, 1.62, 1.44], RMSE = [3.01, 0.89, 1.31, 1.84, 1.9]
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  Database MVL_PFI_db.csv loaded successfully, including:
+   - 51 datapoints
+   - 2 accepted descriptors
+   - 5 ignored descriptors
+   - 0 discarded descriptors
+
+o  ML model PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: ln rate
+   - Names: Coupling
+   - Model: MVL
+   - k-fold CV: 5
+   - Repetitions CV: 10
+   - Descriptors: ['E (HOMO)_anion_boltz']
+   - Training points: 41
+   - Test points: 10
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_MVL_PFI.png
+      Results of flawed models and sorted cross-validation:
+      Original RMSE (10x 5-fold CV) 1.7 + 15% & 30% threshold = 1.9 & 2.2
+         - y_mean: UNCLEAR, RMSE = 2.1, higher than original, but close to fail
+         o y_shuffle: PASSED, RMSE = 2.2, higher than thresholds
+         o onehot: PASSED, RMSE = 2.2, higher than thresholds
+         - Sorted 5-fold CV : R2 = [0.44, 0.23, 0.03, 0.01, 0.59], MAE = [3.1, 0.64, 1.41, 1.44, 1.59], RMSE = [3.16, 0.79, 1.48, 1.8, 1.99]
+
+Time VERIFY: 0.75 seconds
+

@@ -1,0 +1,98 @@
+ROBERT v 2.1.0 2026/02/11 21:55:27 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, 14, e1733.
+
+Command line used in ROBERT: python -m robert --csv_name "Amide_Coupling_Modeling_Spreadsheet.csv" --y "ln rate" --names "Coupling" --ignore "['Coupling', 'Acid', 'Amine', 'rate']" --model "['MVL']"
+
+
+o  Starting data curation with the CURATE module
+
+   - Removed 1 row(s) with >50% missing descriptors
+
+o  Database Amide_Coupling_Modeling_Spreadsheet.csv loaded successfully, including:
+   - 51 datapoints
+   - 115 accepted descriptors
+   - 4 ignored descriptors
+   - 0 discarded descriptors
+
+o  Analyzing categorical variables
+   - No categorical variables were found
+
+o  Duplication filters activated
+   Excluded datapoints:
+   -  No datapoints were removed
+
+o  Correlation filter activated with these thresholds: thres_x = 0.7
+   Excluded descriptors:
+
+   - E THF_interm_boltz removed (R2 = 1.00 with E THF_acid_boltz), kept more predictive descriptor
+   - G THF_interm_boltz removed (R2 = 1.00 with G THF_acid_boltz), kept more predictive descriptor
+   - e gas_acid_boltz removed (R2 = 1.00 with e gas_interm_boltz), kept more predictive descriptor
+   - g gas_acid_boltz removed (R2 = 1.00 with g gas_interm_boltz), kept more predictive descriptor
+   - G THF_acid_boltz removed (R2 = 1.00 with G THF_anion_boltz), kept more predictive descriptor
+   - E THF_acid_boltz removed (R2 = 1.00 with E THF_anion_boltz), kept more predictive descriptor
+   - g gas_interm_boltz removed (R2 = 1.00 with g gas_anion_boltz), kept more predictive descriptor
+   - e gas_interm_boltz removed (R2 = 1.00 with e gas_anion_boltz), kept more predictive descriptor
+   - g gas_anion_boltz removed (R2 = 1.00 with E THF_anion_boltz), kept more predictive descriptor
+   - E THF_amine_boltz removed (R2 = 1.00 with g gas_amine_boltz), kept more predictive descriptor
+   - E THF_anion_boltz removed (R2 = 1.00 with G THF_anion_boltz), kept more predictive descriptor
+   - G THF_amine_boltz removed (R2 = 1.00 with g gas_amine_boltz), kept more predictive descriptor
+   - e gas_amine_boltz removed (R2 = 1.00 with g gas_amine_boltz), kept more predictive descriptor
+   - e gas_anion_boltz removed (R2 = 1.00 with G THF_anion_boltz), kept more predictive descriptor
+   - dihedral-C5-N3-C1-O2_interm_boltz removed (R2 = 1.00 with dihedral-C4-C1-N3-C5_interm_boltz), kept more predictive descriptor
+   - dihedral-C4-C1-N3-C6_interm_boltz removed (R2 = 1.00 with dihedral-C6-N3-C1-O2_interm_boltz), kept more predictive descriptor
+   - NMR-C4_interm_boltz removed (R2 = 1.00 with NMR-C4_acid_boltz), kept more predictive descriptor
+   - Polarizability (1)_acid_boltz removed (R2 = 1.00 with Polarizability (1)_anion_boltz), kept more predictive descriptor
+   - NMR-C4_anion_boltz removed (R2 = 0.99 with NMR-C4_acid_boltz), kept more predictive descriptor
+   - NBO-C4_interm_boltz removed (R2 = 0.99 with NBO-C4_acid_boltz), kept more predictive descriptor
+   - Vbur-2.5A_interm_boltz removed (R2 = 0.99 with Vbur-3.0A_interm_boltz), kept more predictive descriptor
+   - dihedral-C6-N3-C1-O2_interm_boltz removed (R2 = 0.99 with dihedral-C4-C1-N3-C5_interm_boltz), kept more predictive descriptor
+   - Polarizability (1)_interm_boltz removed (R2 = 0.98 with Polarizability (1)_anion_boltz), kept more predictive descriptor
+   - NBO-C4_anion_boltz removed (R2 = 0.98 with NBO-C4_acid_boltz), kept more predictive descriptor
+   - E (LUMO)_interm_boltz removed (R2 = 0.98 with omega_interm_boltz), kept more predictive descriptor
+   - Vbur-2.5A_acid_boltz removed (R2 = 0.98 with Vbur-3.0A_acid_boltz), kept more predictive descriptor
+   - Vbur-2.5A_amine_boltz removed (R2 = 0.98 with Vbur-3.0A_amine_boltz), kept more predictive descriptor
+   - NBO-C1_interm_boltz removed (R2 = 0.97 with NBO-C1 C=O_acid_boltz), kept more predictive descriptor
+   - Vbur-2.5A_anion_boltz removed (R2 = 0.97 with Vbur-3.0A_anion_boltz), kept more predictive descriptor
+   - Sterimol-B5-C1-C4_anion_boltz removed (R2 = 0.96 with Sterimol-B5-C1-C4_acid_boltz), kept more predictive descriptor
+   - pyramidalization N1 (1st)_anion removed (R2 = 0.96 with ave_angle-C4-N1-H2_C4-N1-H3_amine_boltz), kept more predictive descriptor
+   - Vbur-2.0A_interm_boltz removed (R2 = 0.95 with Vbur-3.0A_interm_boltz), kept more predictive descriptor
+   - Vbur-3.0A_interm_boltz removed (R2 = 0.93 with Vbur-3.0A_acid_boltz), kept more predictive descriptor
+   - IR-freq-N-H_asym-stretch_amine_boltz removed (R2 = 0.92 with IR-freq-N-H_sym-stretch _amine_boltz), kept more predictive descriptor
+   - Vbur-2.0A_amine_boltz removed (R2 = 0.91 with Vbur-3.0A_amine_boltz), kept more predictive descriptor
+   - Vbur-2.0A_acid_boltz removed (R2 = 0.91 with Vbur-3.0A_acid_boltz), kept more predictive descriptor
+   - E (LUMO)_acid_boltz removed (R2 = 0.90 with omega_acid_boltz), kept more predictive descriptor
+   - NMR-C1 C=O_acid_boltz removed (R2 = 0.90 with NMR-C1_interm_boltz), kept more predictive descriptor
+   - Sterimol-L-C1-C4_acid_boltz removed (R2 = 0.89 with Sterimol-L-C1-C4_anion_boltz), kept more predictive descriptor
+   - omega_anion_boltz removed (R2 = 0.88 with E (LUMO)_anion_boltz), kept more predictive descriptor
+   - Vbur-3.0A_anion_boltz removed (R2 = 0.86 with Vbur-3.0A_acid_boltz), kept more predictive descriptor
+   - eta_amine_boltz removed (R2 = 0.85 with E (HOMO)_amine_boltz), kept more predictive descriptor
+   - Sterimol-L-C1-C4_anion_boltz removed (R2 = 0.84 with Sterimol-L-C1-C4_interm_boltz), kept more predictive descriptor
+   - omega_acid_boltz removed (R2 = 0.84 with omega_interm_boltz), kept more predictive descriptor
+   - Sterimol-B1-C1-C4_interm_boltz removed (R2 = 0.82 with Sterimol-B1-C1-C4_anion_boltz), kept more predictive descriptor
+   - omega_interm_boltz removed (R2 = 0.82 with mu_interm_boltz), kept more predictive descriptor
+   - NMR-C1_interm_boltz removed (R2 = 0.81 with NMR-C1 C=O_anion_boltz), kept more predictive descriptor
+   - lone-pair-N1_anion removed (R2 = 0.79 with E (LUMO)_amine_boltz), kept more predictive descriptor
+   - Sterimol-B1-C1-C4_acid_boltz removed (R2 = 0.76 with Sterimol-B1-C1-C4_anion_boltz), kept more predictive descriptor
+   - NMR-C4_acid_boltz removed (R2 = 0.76 with NBO-C1 C=O_acid_boltz), kept more predictive descriptor
+   - Sterimol-B5-C1-C4_interm_boltz removed (R2 = 0.76 with Sterimol-B5-C1-C4_acid_boltz), kept more predictive descriptor
+   - E (HOMO)_amine_boltz removed (R2 = 0.75 with mu_amine_boltz), kept more predictive descriptor
+   - NBO-C4_amine_boltz removed (R2 = 0.74 with Sterimol-B1-N1-C4_amine_boltz), kept more predictive descriptor
+   - mu_anion_boltz removed (R2 = 0.74 with mu_interm_boltz), kept more predictive descriptor
+   - eta_interm_boltz removed (R2 = 0.72 with eta LUMO-HOMO_acid_boltz), kept more predictive descriptor
+   - NMR-H5 O-H_acid_boltz removed (R2 = 0.72 with NBO-H5 O-H_acid_boltz), kept more predictive descriptor
+   - Sterimol-B1-C1-C4_anion_boltz removed (R2 = 0.71 with Vbur-3.0A_acid_boltz), kept more predictive descriptor
+   - Total: 57 descriptors removed due to high correlation with other descriptors
+
+o  There are more descriptors than one-third of the data points. A Recursive Feature Elimination with Cross-Validation (RFECV) or permutation feature importance (PFI) using 10x 5_fold_cv will be performed to select the most relevant descriptors for each model
+
+   - MVL: 2 descriptors selected (using RFECV)
+
+   o Model MVL: 2 descriptors remaining:
+      E (HOMO)_anion_boltz, eta_anion_boltz
+
+o  Model-specific curated databases were stored in C:\Users\jac340\OneDrive - University of Bath\Teaching\CH52072 - AI and machine learning for sustainable chemical technology\CH52072\Lecture-4\CURATE
+
+x  The Pearson heatmap was not generated because the number of features and the y value (58) is higher than 30.
+
+Time CURATE: 2.88 seconds
+

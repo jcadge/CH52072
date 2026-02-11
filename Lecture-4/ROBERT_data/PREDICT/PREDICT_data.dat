@@ -1,0 +1,130 @@
+ROBERT v 2.1.0 2026/02/11 21:55:27 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, 14, e1733.
+
+Command line used in ROBERT: python -m robert --csv_name "Amide_Coupling_Modeling_Spreadsheet.csv" --y "ln rate" --names "Coupling" --ignore "['Coupling', 'Acid', 'Amine', 'rate']" --model "['MVL']"
+
+
+o  Representation of predictions and analysis of ML models with the PREDICT module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  Database MVL_db.csv loaded successfully, including:
+   - 51 datapoints
+   - 2 accepted descriptors
+   - 5 ignored descriptors
+   - 0 discarded descriptors
+
+o  ML model No_PFI (with no PFI filter) and Xy database were loaded, including:
+   - Target value: ln rate
+   - Names: Coupling
+   - Model: MVL
+   - k-fold CV: 5
+   - Repetitions CV: 10
+   - Descriptors: ['E (HOMO)_anion_boltz', 'eta_anion_boltz']
+   - Training points: 41
+   - Test points: 10
+   o  Saving CSV databases with predictions and their SD in:
+      -  Predicted results of starting dataset: PREDICT/MVL_No_PFI.csv
+
+   o  Saving graphs in:
+      -  Graph in: PREDICT/Results_MVL_No_PFI.png
+      -  Graph in: PREDICT/CV_variability_MVL_No_PFI.png
+
+   o  Summary of results MVL_No_PFI:
+      -  Points CV (train+valid.):Test = 41:10
+      -  Proportion CV (train+valid.):Test = 80:20
+      -  Number of descriptors = 2
+      -  Proportion (train+valid.) points:descriptors = 41:2
+      -  10x 5-fold CV : R2 = 0.4, MAE = 1.3, RMSE = 1.7
+      -  Test : R2 = 0.03, MAE = 1.5, RMSE = 2.1
+      -  Average SD in test set = 0.17
+      -  y range of dataset (train+valid.) = -5.7 to 2.7, total 8.4
+
+   o  SHAP plot saved in PREDICT/SHAP_MVL_No_PFI.png
+      -  E (HOMO)_anion_boltz = min: -2.3, max: 1.7
+      -  eta_anion_boltz = min: -3.0, max: 1.2
+
+   o  PFI plot saved in PREDICT/PFI_MVL_No_PFI.png
+      Influence on RMSE
+      -  E (HOMO)_anion_boltz = 0.43 +- 0.093
+      -  eta_anion_boltz = 0.22 +- 0.099
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_No_PFI.png.
+      Ideally, variables should show low correlations.
+      x  WARNING! Noticeable correlations observed (up to r = -0.81 or R2 = 0.65, for E (HOMO)_anion_boltz and eta_anion_boltz)
+
+   o  Outliers plot saved in PREDICT/Outliers_MVL_No_PFI.png
+      Train: 2 outliers out of 41 datapoints (4.9%)
+      -  AcD-ND (2.1 SDs)
+      -  Ac14-N13 (2.2 SDs)
+      Test: 1 outliers out of 10 datapoints (10.0%)
+      -  Ac9-N9 (3.6 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_MVL_No_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 7, Q2: 10, Q3: 18, Q4: 16
+      x  WARNING! Your data is slightly not uniform (Q1 has 7 points while Q3 has 18)
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  Database MVL_PFI_db.csv loaded successfully, including:
+   - 51 datapoints
+   - 2 accepted descriptors
+   - 5 ignored descriptors
+   - 0 discarded descriptors
+
+o  ML model PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: ln rate
+   - Names: Coupling
+   - Model: MVL
+   - k-fold CV: 5
+   - Repetitions CV: 10
+   - Descriptors: ['E (HOMO)_anion_boltz']
+   - Training points: 41
+   - Test points: 10
+   o  Saving CSV databases with predictions and their SD in:
+      -  Predicted results of starting dataset: PREDICT/MVL_PFI.csv
+
+   o  Saving graphs in:
+      -  Graph in: PREDICT/Results_MVL_PFI.png
+      -  Graph in: PREDICT/CV_variability_MVL_PFI.png
+
+   o  Summary of results MVL_PFI:
+      -  Points CV (train+valid.):Test = 41:10
+      -  Proportion CV (train+valid.):Test = 80:20
+      -  Number of descriptors = 1
+      -  Proportion (train+valid.) points:descriptors = 41:1
+      -  10x 5-fold CV : R2 = 0.39, MAE = 1.3, RMSE = 1.7
+      -  Test : R2 = 0.06, MAE = 1.5, RMSE = 2.0
+      -  Average SD in test set = 0.15
+      -  y range of dataset (train+valid.) = -5.7 to 2.7, total 8.4
+
+   o  SHAP plot saved in PREDICT/SHAP_MVL_PFI.png
+      -  E (HOMO)_anion_boltz = min: -3.6, max: 2.7
+
+   o  PFI plot saved in PREDICT/PFI_MVL_PFI.png
+      Influence on RMSE
+      -  E (HOMO)_anion_boltz = 0.93 +- 0.14
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_PFI.png.
+      Ideally, variables should show low correlations.
+      o  Correlations between variables are acceptable
+
+   o  Outliers plot saved in PREDICT/Outliers_MVL_PFI.png
+      Train: 4 outliers out of 41 datapoints (9.8%)
+      -  AcE-NE (2.3 SDs)
+      -  AcD-ND (2.1 SDs)
+      -  Ac10-N11 (2.1 SDs)
+      -  Ac14-N13 (2.2 SDs)
+      Test: 1 outliers out of 10 datapoints (10.0%)
+      -  Ac9-N9 (3.5 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_MVL_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 7, Q2: 10, Q3: 18, Q4: 16
+      x  WARNING! Your data is slightly not uniform (Q1 has 7 points while Q3 has 18)
+
+Time PREDICT: 16.28 seconds
+
